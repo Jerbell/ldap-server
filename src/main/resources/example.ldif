@@ -1,0 +1,49 @@
+dn: dc=example,dc=com
+dc: example
+description: My wonderful company as much text as you want to place 
+ in this line up to 32K continuation data for the line above must 
+ have <CR> or <CR><LF> i.e. ENTER works 
+ on both Windows and *nix system - new line MUST begin with ONE SPACE
+objectClass: dcObject
+objectClass: organization
+o: Example, Inc.
+
+dn: ou=users,dc=example,dc=com
+ou: users
+description: All users in organisation
+objectclass: organizationalunit
+
+dn: ou=groups,dc=example,dc=com
+ou: groups
+description: All groups in organisation
+objectclass: organizationalunit
+
+dn: cn=John Smith,ou=users,dc=example,dc=com
+objectclass: inetOrgPerson
+ou: Human Resources
+description: HR Manager
+cn: John Smith
+displayName: John Smith
+sn: Smith
+givenName: John
+sAMAccountName: jsmith
+userpassword: password
+mail: john.smith@example.com
+
+dn: cn=Julian Bell,ou=users,dc=example,dc=com
+objectclass: inetOrgPerson
+ou: Development
+description: Developer
+cn: Julian Bell
+displayName: Julian Bell
+sn: Bell
+givenName: Julian
+sAMAccountName: jbell
+userpassword: password
+mail: julian.bell@example.com
+
+dn: cn=flowcrypt,ou=groups,dc=example,dc=com
+objectclass: groupOfNames
+cn: flowcrypt
+member: cn=John Smith,ou=people,dc=example,dc=com
+member: cn=Julian Bell,ou=people,dc=example,dc=com
